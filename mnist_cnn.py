@@ -73,8 +73,6 @@ def train(model, num_epochs, train_dl, valid_dl):
         for x_batch, y_batch in train_dl:
             
             pred = model(x_batch)    # Get predicted values for this batch 
-            print(x_batch.shape,pred.shape,y_batch.shape)
-            exit()    
             loss = loss_fn(pred, y_batch)    # Calculate the loss
             loss.backward()    # Compute gradients
             optimizer.step()    # Update parameters
